@@ -38,8 +38,7 @@ import org.moe.samples.kotlincalculator.common.CalculatorAdapter
 
 class CalcActivity : AppCompatActivity(), View.OnClickListener {
 
-    private var calcText: TextView? = null
-
+    private lateinit var calcText: TextView
     private var showStr: String = ""
 
     private var myCalculatorAdapter: CalculatorAdapter = CalculatorAdapter()
@@ -50,26 +49,26 @@ class CalcActivity : AppCompatActivity(), View.OnClickListener {
         myCalculatorAdapter = CalculatorAdapter()
 
         setContentView(R.layout.calc_activity)
-        calcText = findViewById(R.id.calc_text) as TextView
-        calcText!!.textSize = 50f
+        calcText = findViewById(R.id.calc_text)
+        calcText.textSize = 50f
 
-        val btn1 = findViewById(R.id.bdig_1) as Button
-        val btn2 = findViewById(R.id.bdig_2) as Button
-        val btn3 = findViewById(R.id.bdig_3) as Button
-        val btn4 = findViewById(R.id.bdig_4) as Button
-        val btn5 = findViewById(R.id.bdig_5) as Button
-        val btn6 = findViewById(R.id.bdig_6) as Button
-        val btn7 = findViewById(R.id.bdig_7) as Button
-        val btn8 = findViewById(R.id.bdig_8) as Button
-        val btn9 = findViewById(R.id.bdig_9) as Button
-        val btn0 = findViewById(R.id.bdig_0) as Button
-        val btn10 = findViewById(R.id.b_c) as Button
-        val btn11 = findViewById(R.id.b_div) as Button
-        val btn12 = findViewById(R.id.b_mul) as Button
-        val btn13 = findViewById(R.id.b_minus) as Button
-        val btn14 = findViewById(R.id.b_sum) as Button
-        val btn15 = findViewById(R.id.b_dot) as Button
-        val btn16 = findViewById(R.id.b_equal) as Button
+        val btn1: Button = findViewById(R.id.bdig_1)
+        val btn2: Button = findViewById(R.id.bdig_2)
+        val btn3: Button = findViewById(R.id.bdig_3)
+        val btn4: Button = findViewById(R.id.bdig_4)
+        val btn5: Button = findViewById(R.id.bdig_5)
+        val btn6: Button = findViewById(R.id.bdig_6)
+        val btn7: Button = findViewById(R.id.bdig_7)
+        val btn8: Button = findViewById(R.id.bdig_8)
+        val btn9: Button = findViewById(R.id.bdig_9)
+        val btn0: Button = findViewById(R.id.bdig_0)
+        val btn10: Button = findViewById(R.id.b_c)
+        val btn11: Button = findViewById(R.id.b_div)
+        val btn12: Button = findViewById(R.id.b_mul)
+        val btn13: Button = findViewById(R.id.b_minus)
+        val btn14: Button = findViewById(R.id.b_sum)
+        val btn15: Button = findViewById(R.id.b_dot)
+        val btn16: Button = findViewById(R.id.b_equal)
 
         btn0.setOnClickListener(this)
         btn1.setOnClickListener(this)
@@ -118,8 +117,8 @@ class CalcActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
         if (symbol !== "") {
-            showStr = myCalculatorAdapter!!.sendNewSymbol(symbol)
-            calcText!!.text = showStr
+            showStr = myCalculatorAdapter.sendNewSymbol(symbol)
+            calcText.text = showStr
         }
     }
 
